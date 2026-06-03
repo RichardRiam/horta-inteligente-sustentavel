@@ -1,26 +1,3 @@
-/**********************************************************************************
- *  TITLE: Plant Watering system using ESP32 Webserver AP, Moisture Sensor, DHT11 with 0.96" OLED
- *  Click on the following links to learn more. 
- *  YouTube Video: https://youtu.be/EX7sC-ksH4o
- *  Related Blog : https://iotcircuithub.com/esp32-projects/
- *  
- *  This code is provided free for project purpose and fair use only.
- *  Please do mail us to techstudycell@gmail.com if you want to use it commercially.
- *  Copyrighted © by Tech StudyCell
- *  
- *  Preferences--> Aditional boards Manager URLs : 
- *  https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json, http://arduino.esp8266.com/stable/package_esp8266com_index.json
- *  
- *  Download Board ESP32 (3.1.1) : https://github.com/espressif/arduino-esp32
- *
- *  Download the libraries 
- *  Adafruit_SSD1306 Library (2.5.13): https://github.com/adafruit/Adafruit_SSD1306
- *  AceButton Library (1.10.1): https://github.com/bxparks/AceButton
- *  Adafruit Unified Sensor library (1.1.15): https://github.com/adafruit/Adafruit_Sensor
- *  DHT Library (1.4.6): https://github.com/adafruit/DHT-sensor-library
- **********************************************************************************/
- 
-
 #include <WiFi.h>
 #include <WebServer.h>
 #include <Adafruit_SSD1306.h>
@@ -28,9 +5,9 @@
 #include <AceButton.h>
 using namespace ace_button;
 
-#define SCREEN_WIDTH 128  // OLED display width, in pixels
-#define SCREEN_HEIGHT 32  // OLED display height, in pixels
-#define OLED_RESET -1    // Reset pin # (or -1 if sharing Arduino reset pin)
+#define SCREEN_WIDTH 128  // OLED largura display
+#define SCREEN_HEIGHT 32  // OLED comprimento display
+#define OLED_RESET -1    // pino reset
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 #define SensorPin 34
@@ -42,7 +19,7 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 #define BuzzerPin 26
 #define ModeLed 15
 
-#define DHTTYPE DHT11
+#define DHTTYPE DHT22
 DHT dht(DHTPin, DHTTYPE);
 
 ButtonConfig config1;
@@ -53,18 +30,18 @@ AceButton button2(&config2);
 void handleEvent1(AceButton*, uint8_t, uint8_t);
 void handleEvent2(AceButton*, uint8_t, uint8_t);
 
-const char *ssid = "ESP32_Plant_System";  //AP Name
-const char *password = "12345678";  //AP Password
+const char *ssid = "ESP32_Plant_System";  //AP Nome
+const char *password = "12345678";  //AP senha
 
 WebServer server(80);
 
-//Set the maximum wet and maximum dry value measured by the sensor
-int wetSoilVal = 1050 ;  //min value when soil is wet
-int drySoilVal = 3050 ;  //max value when soil is dry
+//Colocando o valor maximo de humidade e o minimo medido pelo sensor
+int wetSoilVal = 1500 ;  //minimo valor quando o solo esta molhado
+int drySoilVal = 3100 ;  //maximo valor quando o solo esta seco
 
-//Set ideal moisture range percentage(%) in soil
-int moistPerLow =   20 ;  //min moisture %
-int moistPerHigh =   80 ;  //max moisture %
+//definir faixa ideal da umidade do solo
+int moistPerLow =   35 ;  //min %
+int moistPerHigh =   55 ;  //max m %
 
 int sensorVal;
 int moisturePercentage;
@@ -75,9 +52,9 @@ int humidity1 = 0;
 String currMode = "A";
 
 unsigned long previousMillis = 0;
-const long interval = 2000;  //Interval for Sensor OLED
+const long interval = 2000;  //Intervalo do sensor oled
 unsigned long previousBuzzerMillis = 0;
-const long buzzerInterval = 3000;  //Interval for Buzzer
+const long buzzerInterval = 3000;  //Intervalo para o buzzer
 
 void handleRoot() {
     String html = "<!DOCTYPE html><html><head><title>Plant Monitor</title>";
