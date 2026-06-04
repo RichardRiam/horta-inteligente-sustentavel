@@ -30,7 +30,7 @@ AceButton button2(&config2);
 void handleEvent1(AceButton*, uint8_t, uint8_t);
 void handleEvent2(AceButton*, uint8_t, uint8_t);
 
-const char *ssid = "ESP32_Plant_System";  //AP Nome
+const char *ssid = "ESP32_Sistema_Irrigacao";  //AP Nome
 const char *password = "12345678";  //AP senha
 
 WebServer server(80);
@@ -198,8 +198,8 @@ void loop() {
         getWeather();
         updateOLED();
     }
-    handleBuzzer();  //control buzzer in manual mode
-    controlPump();   //control Pump in auto mode
+    handleBuzzer();  //controle de buzzer no  modo manual
+    controlPump();   //controle de valvula no modo automático
 
     button1.check();
     button2.check();
