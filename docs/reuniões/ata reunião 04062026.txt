@@ -1,0 +1,89 @@
+ata reunião 04/06/2026
+
+## 1. Atualização das atividades concluídas
+
+### Circuito e Hardware
+
+* Montagem inicial do circuito concluída.
+* Testes realizados, mas nn funcionou
+* Identificação de falhas de funcionamento.
+* Verificação de possíveis erros de pinagem e conexões.
+
+ Software
+
+* Código-base funcionando parcialmente.
+* Estrutura inicial do GitHub criada.
+* Organização do repositório realizada (firmware, docs, imagens e dados).
+
+Gestão do Projeto
+
+Aguardando acesso à organização GitHub do PET Elétrica para transferência/vinculação do repositório.
+
+---
+
+ 2. Atividades prioritárias para esta semana
+
+Circuito - JEANE
+
+Corrigir erros de ligação e pinagem.
+testar acionamento da válvula/bomba.
+bter funcionamento completo do protótipo.
+
+Código
+
+* Preparar estrutura do código para integração com API climática - LEONARDO
+* Preparar estrutura do código para MQTT - GABRIEL MATOS
+
+#GitHub
+
+* Finalizar migração para o GitHub do PET.
+* Definir responsáveis por cada módulo do código.
+* Criar padrão de commits e organização dos arquivos.
+
+
+
+## 3. Planejamento para a próxima semana
+
+### API Climática
+
+* Escolha da API.
+* Estudo da documentação.
+* Implementação inicial.
+* Teste de obtenção de dados meteorológicos.
+
+### MQTT
+
+* Estudo do protocolo.
+* Definição do broker.
+* Estruturação da comunicação ESP32 ↔ Servidor.
+* Primeiros testes de publicação e assinatura.
+
+
+
+### Esquemático
+
+* Atualização do diagrama elétrico.
+* Revisão da pinagem utilizada.
+* Início da documentação técnica.
+
+---
+
+#4. Produção Científica e Prazo
+
+Prazo atual: 24 de junho.
+
+### Artigos e Relatórios
+
+* Definir responsáveis pela escrita.
+* Iniciar revisão bibliográfica complementar.
+* Iniciar redação da metodologia.
+* Registrar fotos e resultados dos testes.
+
+### Próximas entregas
+
+* Circuito funcional.
+* Código organizado no GitHub do PET.
+* API iniciada.
+* MQTT iniciado.
+* Esquemático atualizado.
+* Estrutura inicial do artigo em desenvolvimento.
