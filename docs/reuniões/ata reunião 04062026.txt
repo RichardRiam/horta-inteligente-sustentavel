@@ -87,3 +87,5 @@ Prazo atual: 24 de junho.
 * MQTT iniciado.
 * Esquemático atualizado.
 * Estrutura inicial do artigo em desenvolvimento.
+
+proxima reunião: 11/06/2026 antes do quem sou eu
